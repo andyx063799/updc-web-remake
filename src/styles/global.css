@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+    --color-upc-primary: #821122; /* Tinto institucional mejorado */
+    --color-upc-dark: #500A13;
+    --color-upc-accent: #3A4D39; /* Verde elegante para contrastes institucionales */
+}

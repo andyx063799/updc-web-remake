@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import HeroCarousel from '../components/HeroCarousel.astro';
+import QuickAccess from '../components/QuickAccess.astro';
+import Admissions from '../components/Admissions.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Universidad Politécnica del Centro">
+  <!-- Barra de Navegación -->
+  <Navbar />
+
+  <!-- Hero con Carrusel Dinámico -->
+  <HeroCarousel />
+
+  <!-- Accesos Rápidos (SIUPC / Moodle) -->
+  <QuickAccess />
+
+  <!-- Convocatoria de Admisión y Prepa UPC -->
+  <Admissions />
+
+  <!-- Pie de Página -->
+  <Footer />
+</Layout>

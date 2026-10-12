@@ -1,0 +1,62 @@
+---
+// - Arreglo de plataformas institucionales para que sea mas facil
+const platforms = [
+    {
+        title: "SIUPC ESTUDIANTES",
+        description: "Consulta de calificaciones, horarios, kárdex y trámites escolares en línea.",
+        icon: "/assets/icons/student.svg", 
+        link: "http://200.94.123.67/Modulos/Seguridad/Vistas/Login.aspx",
+        bgClass: "bg-slate-900 hover:bg-slate-800 text-white"
+    },
+    {
+        title: "SIUPC ADMINISTRATIVOS",
+        description: "Gestión interna, control escolar, recursos humanos y planeación institucional.",
+        icon: "/assets/icons/admin.svg", 
+        link: "http://200.94.123.68/Modulos/Seguridad/Vistas/Login.aspx",
+        bgClass: "bg-[var(--color-upc-primary)] hover:bg-[var(--color-upc-dark)] text-white"
+    },
+    {
+        title: "MOODLE",
+        description: "Plataforma oficial de aprendizaje virtual, aulas y entrega de actividades.",
+        icon: "/assets/icons/moodle.svg", 
+        link: "http://200.94.123.70/",
+        bgClass: "bg-[var(--color-upc-accent)] hover:opacity-90 text-white"
+    }
+];
+---
+
+<section class="relative z-20 max-w-7xl mx-auto px-6 sm:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {platforms.map((item) => (
+        <a 
+            href={item.link} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class={`${item.bgClass} p-7 rounded-2xl shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group border border-white/10`}
+        >
+            <div>
+                <!-- Contenedor del ícono SVG -->
+                <div class="w-12 h-12 mb-4 flex items-center justify-center bg-white/10 rounded-xl backdrop-blur-md p-2.5">
+                    <img 
+                        src={item.icon} 
+                        alt={item.title} 
+                        class="w-full h-full object-contain filter brightness-0 invert" 
+                    />
+                </div>
+
+                <h3 class="text-lg font-bold tracking-tight mb-2 flex items-center justify-between">
+                    {item.title}
+                    <span class="text-base opacity-70 group-hover:translate-x-1 transition-transform">→</span>
+                </h3>
+                <p class="text-xs sm:text-sm opacity-90 leading-relaxed font-normal">
+                    {item.description}
+                </p>
+            </div>
+            
+            <div class="mt-6 pt-4 border-t border-white/15 text-xs font-semibold uppercase tracking-wider flex items-center gap-2 opacity-90">
+                <span>Acceder al sistema</span>
+            </div>
+        </a>
+        ))}
+    </div>
+</section>

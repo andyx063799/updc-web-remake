@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Calendario Escolar 2026-2027 | Universidad Politécnica del Centro">
+    <Navbar />
+
+    <!-- Cabecera de la página -->
+    <header class="bg-slate-900 text-white py-16 px-6 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-upc-primary/20 mix-blend-multiply"></div>
+        <div class="relative z-10 max-w-3xl mx-auto">
+        <span class="bg-upc-primary text-white text-xs font-bold px-3 py-1 rounded-md uppercase tracking-wider mb-3 inline-block">
+            Ciclo Académico Oficial
+        </span>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">
+            Calendario Escolar 2026-2027
+        </h1>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Consulta las fechas clave, periodos cuatrimestrales, suspensiones de labores y semanas límite de trámites escolares.
+        </p>
+        </div>
+    </header>
+
+    <!-- Contenedor Principal del Calendario -->
+    <main class="py-16 px-6 sm:px-8 max-w-5xl mx-auto">
+        <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-200/80 text-center">
+        
+        <!-- Barra superior con título y botón compacto -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 pb-6 border-b border-slate-100">
+            <div class="text-left">
+            <h2 class="text-lg font-bold text-slate-900">Calendario Oficial UPC</h2>
+            <p class="text-xs text-slate-500">Aprobado por la dirección académica y control escolar.</p>
+            </div>
+            
+            <!-- Botón único, compacto y elegante -->
+            <a 
+            href="https://updc.edu.mx/wp-content/uploads/2026/07/Captura-de-pantalla-2026-07-31-110854-798x1024.png" 
+            download="Calendario-UPC-2026-2027.jpg"
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="bg-upc-primary hover:bg-upc-dark text-white text-xs font-bold py-2.5 px-4 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 hover:scale-105 shrink-0"
+            >
+            <span class="text-sm"></span>
+            <span>Descargar Calendario</span>
+            </a>
+        </div>
+
+        <!-- Imagen del Calendario limpia y centrada -->
+        <div class="relative rounded-2xl overflow-hidden bg-slate-50 border border-slate-200/60 p-3 sm:p-6 shadow-inner flex justify-center">
+            <img 
+            src="https://updc.edu.mx/wp-content/uploads/2026/07/Captura-de-pantalla-2026-07-31-110854-798x1024.png" 
+            alt="Calendario Escolar UPC 2026-2027" 
+            class="w-full max-w-2xl h-auto object-contain rounded-xl shadow-md"
+            />
+        </div>
+
+        </div>
+    </main>
+
+    <Footer />
+</Layout>

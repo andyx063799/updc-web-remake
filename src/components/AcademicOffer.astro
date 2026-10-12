@@ -1,0 +1,84 @@
+---
+const careers = [
+    {
+        title: "Ingeniería en Tecnologías de la Información",
+        category: "Ingeniería",
+        duration: "3 años 4 meses",
+        badge: "Alta Demanda",
+        description: "Desarrollo de software, ciberseguridad, infraestructura en la nube y arquitectura de sistemas modernos."
+    },
+    {
+        title: "Ingeniería en Mecatrónica",
+        category: "Ingeniería",
+        duration: "3 años 4 meses",
+        badge: "Tecnología Avanzada",
+        description: "Automatización industrial, robótica, sistemas embebidos y control de procesos inteligentes."
+    },
+    {
+        title: "Ingeniería Financiera",
+        category: "Licenciatura / Ingeniería",
+        duration: "3 años 4 meses",
+        badge: "Estrategia y Negocios",
+        description: "Modelado financiero, análisis de riesgos, mercados bursátiles y tecnología aplicada a las finanzas."
+    },
+    {
+        title: "Ingeniería en Terapia Física",
+        category: "Salud y Tecnología",
+        duration: "3 años 4 meses",
+        badge: "Especializada",
+        description: "Rehabilitación integral, biomecánica y aplicación de tecnologías avanzadas para la salud humana."
+    },
+    {
+        title: "Licenciatura en Administración y Gestión",
+        category: "Negocios",
+        duration: "3 años 4 meses",
+        badge: "Innovación Empresarial",
+        description: "Dirección estratégica de organizaciones, emprendimiento tecnológico y gestión de proyectos globales."
+    }
+    ];
+    ---
+
+    <section id="carreras" class="py-20 bg-slate-100/60 border-y border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-upc-primary font-bold text-xs uppercase tracking-widest bg-upc-primary/10 px-3 py-1 rounded-full">
+            Oferta Educativa
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-4 tracking-tight">
+            Carreras diseñadas para el futuro
+        </h2>
+        <p class="text-slate-600 text-base">
+            Programas académicos enfocados en el desarrollo tecnológico, científico y directivo que demanda el sector profesional actual.
+        </p>
+        </div>
+
+        <!-- Grid de Carreras -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {careers.map((career) => (
+            <div class="bg-white rounded-2xl p-7 shadow-xs hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col justify-between group hover:-translate-y-1">
+            <div>
+                <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-semibold text-upc-primary bg-red-50 px-3 py-1 rounded-md">
+                    {career.category}
+                </span>
+                <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md">
+                    {career.badge}
+                </span>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-upc-primary transition-colors">
+                {career.title}
+                </h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                {career.description}
+                </p>
+            </div>
+            
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-500">
+                <span>⏱️ {career.duration}</span>
+                <span class="text-upc-primary group-hover:translate-x-1 transition-transform">Ver plan de estudios →</span>
+            </div>
+            </div>
+        ))}
+        </div>
+    </div>
+</section>

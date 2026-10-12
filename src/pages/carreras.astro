@@ -1,0 +1,153 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+// Lista completa con las ingenierías oficiales de la UPC, imágenes y datos correspondientes
+const careers = [
+    {
+        title: "Ingeniería en Tecnologías de la Información e Innovación Digital",
+        category: "Ingeniería",
+        duration: "3 años 4 meses",
+        badge: "Alta Demanda",
+        image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop",
+        description: "Desarrollo de software, ciberseguridad, infraestructura en la nube y arquitectura de sistemas modernos.",
+        pdfLink: "#"
+    },
+    {
+        title: "Ingeniería en Mecatrónica",
+        category: "Ingeniería",
+        duration: "3 años 4 meses",
+        badge: "Tecnología Avanzada",
+        image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop",
+        description: "Automatización industrial, robótica, sistemas embebidos y control de procesos inteligentes.",
+        pdfLink: "#"
+    },
+    {
+        title: "Ingeniería en Animación y Efectos Visuales",
+        category: "Tecnología y Multimedia",
+        duration: "3 años 4 meses",
+        badge: "Creatividad Digital",
+        image: "https://images.unsplash.com/photo-1626544827763-d516dce335e2?q=80&w=800&auto=format&fit=crop",
+        description: "Creación de entornos 3D, modelado, animación digital, renderizado y efectos visuales para la industria del entretenimiento y simulaciones.",
+        pdfLink: "#"
+    },
+    {
+        title: "Ingeniería en Biotecnología",
+        category: "Ciencia y Salud",
+        duration: "3 años 4 meses",
+        badge: "Innovación Científica",
+        image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=800&auto=format&fit=crop",
+        description: "Aplicación de la tecnología en procesos biológicos, ingeniería genética, bioprocesos y desarrollo sustentable.",
+        pdfLink: "#"
+    },
+    {
+        title: "Ingeniería en Sistemas Electrónicos",
+        category: "Ingeniería",
+        duration: "3 años 4 meses",
+        badge: "Diseño de Hardware",
+        image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
+        description: "Diseño de circuitos integrados, sistemas de telecomunicaciones, instrumentación virtual y microelectrónica.",
+        pdfLink: "#"
+    },
+    {
+        title: "Ingeniería Mecánica Automotriz",
+        category: "Ingeniería",
+        duration: "3 años 4 meses",
+        badge: "Industria y Motor",
+        image: "https://st.mextudia.com/wp-content/uploads/2019/06/donde-estudiar-ingenieria-mecanica-automotriz.jpg",
+        description: "Diseño, diagnóstico y optimización de sistemas automotrices, trenes motrices y tecnologías de combustión y eléctricas.",
+        pdfLink: "#"
+    },
+    {
+        title: "Ingeniería Petrolera",
+        category: "Energía",
+        duration: "3 años 4 meses",
+        badge: "Sector Energético",
+        image: "https://www.cursosycarreras.com.mx/orientacion/wp-content/uploads/2021/11/ingenieria-petrolera-2-1024x684.jpg",
+        description: "Exploración, perforación, extracción y administración de hidrocarburos bajo estrictos estándares de seguridad y sostenibilidad.",
+        pdfLink: "#"
+    }
+];
+---
+
+<Layout title="Oferta Educativa y Carreras | Universidad Politécnica del Centro">
+    <Navbar />
+
+    <!-- Cabecera de la sección de Carreras -->
+    <header class="bg-slate-900 text-white py-20 px-6 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-upc-primary/20 mix-blend-multiply"></div>
+        <div class="relative z-10 max-w-3xl mx-auto">
+            <span class="bg-upc-primary text-white text-xs font-bold px-3 py-1 rounded-md uppercase tracking-wider mb-4 inline-block">
+                Excelencia Académica
+            </span>
+            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4">
+                Nuestra Oferta Educativa
+            </h1>
+            <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                Descubre los planes de estudio diseñados bajo un modelo por competencias, enfocados en impulsar tu carrera profesional en el sector tecnológico y empresarial.
+            </p>
+        </div>
+    </header>
+
+    <!-- Listado de Carreras en Tarjetas con Imagen -->
+    <main class="py-20 px-6 sm:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {careers.map((career) => (
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-slate-200/80 flex flex-col justify-between group">
+                    
+                    <!-- Imagen de la carrera -->
+                    <div class="relative h-48 overflow-hidden bg-slate-100">
+                        <img 
+                            src={career.image} 
+                            alt={career.title} 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div class="absolute top-4 left-4">
+                            <span class="text-xs font-semibold text-white bg-slate-900/80 backdrop-blur-md px-3 py-1 rounded-lg">
+                                {career.category}
+                            </span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="text-xs font-bold text-slate-900 bg-amber-400 px-2.5 py-1 rounded-lg shadow-sm">
+                                {career.badge}
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Contenido de la tarjeta -->
+                    <div class="p-7 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-upc-primary transition-colors">
+                                {career.title}
+                            </h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                {career.description}
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <div class="flex items-center justify-between text-xs font-semibold text-slate-500 mb-4 pt-4 border-t border-slate-100">
+                                <span>Duración:</span>
+                                <span class="text-slate-900">{career.duration}</span>
+                            </div>
+
+                            <!-- Botón de descarga de plan de estudios -->
+                            <a 
+                                href={career.pdfLink} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="w-full bg-slate-900 hover:bg-upc-primary text-white font-semibold text-xs py-3 px-4 rounded-xl transition-colors flex items-center justify-center gap-2 shadow-sm"
+                            >
+                                <span>Descargar Plan de Estudios</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            ))}
+        </div>
+    </main>
+
+    <Footer />
+</Layout>
